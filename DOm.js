@@ -195,7 +195,7 @@ const repl = document.querySelector('li:nth-child(2)');
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// TOPIC LESSION-3: DOM Node Relationship 
+// TOPIC LESSION-4: DOM Node Relationship 
 
 //NOTEs: overall concept Properties must Remeber        
 
