@@ -1,0 +1,16 @@
+1.NODELIST
+=> Definition = NodeList is a collection of nodes returned by methods like "querySelectorAll".
+=> forEach =  Use forEach to iterate through each element in the NodeList.
+=> NOTE : Direct forEach can use to NodeList But" higher order funtion" 
+            are not work we should convert nodelist into array then
+             we apply "higher order function"
+
+
+2.HTMLCollection:
+=> Definition = HTMLCollection is a collection of elements returned by methods like 
+                "getElementsByClassName".
+=> forEach : Convert HTMLCollection to an array using Array.from or spread syntax
+              before using forEach.
+=> NOTE :Both forEach and higher order function cannot apply to HTMLCollection .
+        first we should covert into array using array.from() or [... a] operator to apply 
+        the forEach and higher order function
