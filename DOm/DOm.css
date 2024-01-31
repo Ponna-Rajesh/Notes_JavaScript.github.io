@@ -1,5 +1,38 @@
+*{
+    font-family: sans-serif;
+}
 .heroo{
     background-color: #000;
     color: #fff;
     padding: 10px;
+}
+body{
+    background: #212121;
+    color: #fff;
+}
+.btn-list{
+    list-style: none
+}
+.trishul{
+    padding: 10px;
+    height: 48px;
+    width: 180px;
+    background: #ff4545;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    color: #fff;
+}
+.god{
+    margin: 0;
+}
+
+ul li{
+    border: 1px solid #ccc;
+    padding: 6px;
+    border-radius: 4px;
+    margin: 10px;
+    list-style: none;
+    color: #FFF200;
+    width: 200px;
+    text-align: center;
 }

@@ -10,14 +10,15 @@
 // main.innerText = "<h1>Hello world</h1>"
 // main.innerText = "Hello world"
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        //TOPIC LESSION-1 : SetAttribute
+//TOPIC LESSION-1 : SetAttribute   
+//NOTE unComment In HTML
     //!  1 . setAttrIBUte 
     const set = document.querySelector('h1');
     // set.className = "heroo"
     // set.id = "imppp"
     // set.title = "djj"
     // console.log(set)
-    
+ //NOTE unComment In HTML   
     //! 2 . setAttrIBUte
     const set2 = document.querySelector('h2');
     // set2.setAttribute('class','h2Name');
@@ -37,7 +38,7 @@
         // set2.style.padding = "20px";
 
         //!5. Selector - Query , GetElement
-
+//NOTE unComment In HTML
 // console.log(document.querySelector('li'))                     // *first li
 // console.log(document.querySelectorAll('li'))                  //*All li NOTE-1 NodeList*
 // console.log(document.getElementById('li2'));
@@ -46,27 +47,28 @@
 // console.log(document.querySelector('li:nth-child(2)'))
 
 //! 5.1 sub
-
-const repl = document.querySelector('li:nth-child(2)');
+//NOTE unComment In HTML
+// const repl = document.querySelector('li:nth-child(2)');
 // repl.style.color = 'red';
 // repl.style.padding = '10px';
 // repl.style.backgroundColor = '#ff454545';
 // repl.style.borderRadius = '5px';
 
 //--------------------------------------------------------------
-
+//NOTE unComment In HTML
         // console.log(document.getElementById('li'));              //NOTE-3
         // console.log(document.getElementsByClassName('li'));      //NOTE-4
 
 //-----------------------------------------------------------
-        const listul = document.querySelector('ul');
+//NOTE unComment In HTML
+        // const listul = document.querySelector('ul');
                 // listul.style.color = "green"
                 // listul.style.fontSize = "20px"
                 // listul.style.fontWeight = "bold"
                 // listul.style.fontFamily = "sans-serif"
                 //  console.log(listul);
 
-        const lii = listul.querySelector('li');
+        // const lii = listul.querySelector('li');
                 // lii.style.color = 'blue'
                 // console.log(lii)
 
@@ -134,27 +136,27 @@ const repl = document.querySelector('li:nth-child(2)');
         const parent = document.querySelector('.parent');
         // console.log(parent);
 
-//---------------------------------------------------------
+
 
         let output;
-        // output = parent.[0].innerText;
+        // output = parent.innerHTML;
         // output = parent.children[0].className;
-        // output = parent.chilchildrendren[0].nodeName;
+        // output = parent.children[0].nodeName;
 
-//----- --------------------------------------------------------
+
 
         // output = parent.children[0].innerText = 'Not-Rajesh';
         //  parent.children[0].style.color = 'red';
         //  parent.children[0].style.fontFamily = 'sans-serif';
 
- // --------------------------------------------------------
+
 
         // output = parent.firstElementChild;
         // parent.firstElementChild.innerText = "NOt..!";
         // output = parent.lastElementChild;
         // parent.lastElementChild.style.color = "#ff4545";
 
-       //!  console.log(output);
+        //  console.log(output);
 
  //*Get Parent Element from a child       
         
@@ -250,12 +252,12 @@ const repl = document.querySelector('li:nth-child(2)');
 //* Siblings 
 
         let secondItem = document.querySelector('.pandulu:nth-child(2)');
-        console.log(secondItem);
-        
+        // console.log(secondItem);
+
         let frk;
         frk = secondItem.previousSibling;
         frk = secondItem.nextSibling;
-        console.log(frk);
+        // console.log(frk);
 
 
 
@@ -275,4 +277,252 @@ const repl = document.querySelector('li:nth-child(2)');
 //           .nextSibling
 //           .previousSibling
 
+// +++++++++++++++++++++++++++Lession - 5++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// TOPIC LESSION-4 or 5: Create & Append Elements 
+  //* createElement :
 
+         const newEle = document.createElement('h1');
+        //! 1. console.log (newEle);
+
+        newEle.className = 'my-div';
+        newEle.id = 'my-id';
+        newEle.setAttribute('title', 'bye');
+
+        // newEle.innerText = 'Hello Rajesh';
+                // or;
+        const Text = document.createTextNode('Jai Hanuman');
+        newEle.appendChild(Text)  //best to use
+        // newEle.style.color = 'Orange'
+
+
+        //!  observe the console Imp 
+        // console.log(newEle);
+
+//*  appendChild  :
+
+        // document.body.appendChild(newEle);
+        // document.querySelector('.Fruits').appendChild(newEle); 
+        // document.querySelector('.child').appendChild(newEle);
+
+// +++++++++++++++++++Lesson 6+++++++++++++++++++++++++++++++++++++++++++++++
+// TOPIC LESSION-6: innerHTML Vs createElement() 
+
+//* Quick and Dirty way Doing Button (innerHTML)
+        // const shani = document.createElement('button');
+        function dirtyway(item){
+                const shani = document.createElement('button');
+                shani.className = 'trishul';
+                shani.innerHTML = ` 
+                <h2 class="god">${item}</h2>`;
+                document.querySelector('.Gods').appendChild(shani);
+                // console.log(shani);
+        };
+        dirtyway('Shani');
+
+        //?Line Break
+        let Gods = document.querySelector('.Gods');
+        var lineBreak = document.createElement("br");
+        Gods.appendChild(lineBreak);
+
+//* CLean & performant Way (createElement())
+        //NOTE 1 way
+const Krishna = document.createElement('button');
+Krishna.className = 'trishul'
+
+const lordText = document.createElement('h2');
+lordText.className = 'god'
+Krishna.appendChild(lordText);
+
+const lordName = document.createTextNode('Lord krishna');
+lordText.appendChild(lordName);
+
+document.querySelector('.Gods').appendChild(Krishna);
+
+//! console.log(Krishna);
+
+        //?Line Break
+        var lineBreak = document.createElement("br");
+        Gods.appendChild(lineBreak);
+
+
+        //NOTE 2 way
+
+ function Lords(item){
+        const Krishna = document.createElement('button');
+        Krishna.className = 'trishul'
+
+        const lordText = document.createElement('h2');
+        lordText.className = 'god'
+        Krishna.appendChild(lordText); 
+        lordText.appendChild(document.createTextNode(item));  // 333 and 334 code
+
+        document.querySelector('.Gods').appendChild(Krishna);
+};
+Lords('JAI HANUMAN');
+
+// ++++++++++++++++++++++++++++++++++++++++lesson 7++++++++++++++++++++++++++++++++++
+// TOPIC LESSION-7: Insert - element , text and html 
+
+//* insertAdjacentElement :
+        function abc(){
+                const ele = document.querySelector('.header');
+
+                const newKey =  document.createElement('h1');
+                newKey.innerText = 'Heroo';
+                newKey.style.color = 'yellow';
+
+                // ele.insertAdjacentElement('beforebegin' , newKey)
+
+        //! beforebegin , afterend , afterbegin , beforeend  observe in Elements inspect 
+        }
+        abc();
+
+//* insertAdjacentText :
+        function cde(){
+                const item = document.querySelector('.header:nth-child(3)');
+                // item.insertAdjacentText('beforebegin', '<h1>Rajesh<//h1>')
+        };
+        cde()
+
+//* insertAdjacentHTML :
+        function fgh(){
+                const item = document.querySelector('.header:nth-child(4)');
+                // item.insertAdjacentHTML('afterend', '<h2>Rajesh</h2>')
+        }
+        fgh()
+//* insertBefore :
+
+function xyz(){
+        const item = document.querySelector('.details');
+
+        const p = document.createElement('p');
+        p.innerText = 'chochi';
+        const items = document.querySelector('.header:nth-child(5)');
+        // item.insertBefore(p , items)
+};
+xyz()
+
+// ++++++++++++++++++++++++++++++++++++++++lesson 8++++++++++++++++++++++++++++++++++
+// TOPIC LESSION-8: Replace Element 
+
+//* 1 replaceWith
+        function replaceFirstItem(){
+                const firstItem = document.querySelector('li:nth-child(1)');
+                const li2 = document.createElement('li')
+                li2.innerText = "Banana Shake";
+                li2.className = 'ice-item'
+                firstItem.replaceWith(li2)
+        };
+      //  replaceFirstItem()
+
+//* 2 replacewith_outerHTML
+
+        function replaceThridItem(){
+                const ThridItem = document.querySelector('li:nth-child(3)');
+                // ThridItem.outerHTML = "<li>Oreo-Shake</li>";
+             
+        };
+        // replaceThridItem()
+
+//* 3 replaceAll
+//! dont run at a time 3 chapter 3.1 , 3.2 ,.....
+
+        function replaceAllItems(){
+                const lis = document.querySelectorAll('li');
+                lis.forEach((items) => {
+               // items.outerHTML = '<li>Jai Sriram</li>'
+                })
+        };
+        // replaceAllItems()
+
+//* 3.1 replaceAll 
+//! dont run at a time 3 chapter 3.1 , 3.2 ,.....
+
+        function replaceAllItems(){
+                const lis = document.querySelectorAll('li');
+                lis.forEach((items,index) => {
+                if(index % 2 === 0){
+                        items.outerHTML = "<li>Jai Sriram</li>"
+                }else{
+                        items.outerHTML = "<li>Jai Hanuman</li>"
+                }
+                })
+        };
+        // replaceAllItems()
+
+//* 3.2 replaceAll 
+
+      function replaceAllItems(){
+        const lis = document.querySelectorAll('li');
+        lis.forEach((items,index)  => {
+                (items.outerHTML = index % 2 === 0 ? '<li>Hanuman</li>' :
+                '<li>kanna</li>')
+             });
+      };
+        // replaceAllItems()
+
+//* 4 replaceChild()  method: 
+        function replacingHeader(){
+                const header = document.querySelector('header');
+                const h2 = document.querySelector('header h2');
+                const h1 = document.createElement('h1');
+                h1.innerText = "Enjoy The Food ";
+                //header.replaceChild(h1, h2)   //NOTE replaceChild() method
+        };
+       // replacingHeader()
+
+// ++++++++++++++++++++++++++++++++++++++++lesson 8 and   9++++++++++++++++++++++++++++++++++
+// TOPIC LESSION-9: Remove Element  : 
+//! 1 Example: 
+        function removeHeader(){
+                const header = document.querySelector('.king');
+                header.remove()
+        };
+        // removeHeader()
+
+//! 2 Example: 
+        function removeFirstItem(){
+                const ul = document.querySelector('.ice-items');
+                const li = document.querySelector('.ice-item');
+                ul.removeChild(li)                                                        //NOTE removeChild()
+        };
+       // removeFirstItem()
+
+//! 3 Example: 
+        function removeFirstItem(itemNumber){
+                const ul = document.querySelector('.ice-items');
+                const li = document.querySelector(`li:nth-child(${itemNumber})`);
+                ul.removeChild(li)     
+        };
+        // removeFirstItem(2)                                                            //NOTE milk removed
+//! 4 Example: 
+        function removeEle(){
+                const ul = document.querySelector('.ice-items');
+                const li = document.querySelectorAll('.ice-item')[0];  //!index[0]
+                ul.removeChild(li)
+        };
+        // removeEle()
+
+//! 5 Example: 
+        function removeEle1(itemRemove){
+                const ul = document.querySelector('.ice-items');
+                const li = document.querySelectorAll('.ice-item')[itemRemove];         //!index[0]
+                ul.removeChild(li)
+        };
+        // removeEle1(2) //!index
+
+//! 6 Example: 
+        function removeEle2(itemRemove){
+                const ul = document.querySelector('.ice-items');
+                const li = document.querySelectorAll('.ice-item')[itemRemove - 1];         //!index[0] 
+                ul.removeChild(li)
+        };
+        //  removeEle2(2) //! compare example-5
+
+//! 7 Example: Short Way
+        const shortHand = (itemNumber) => 
+        document.querySelectorAll('li')[itemNumber-1].remove()
+        // shortHand(2)
+
+// ++++++++++++++++++++++++++++++++++++++++lesson 10++++++++++++++++++++++++++++++++++
+// TOPIC LESSION-9: Remove Element  : 
